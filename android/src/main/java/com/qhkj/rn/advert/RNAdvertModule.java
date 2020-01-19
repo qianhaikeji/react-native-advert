@@ -54,7 +54,7 @@ public class RNAdvertModule extends ReactContextBaseJavaModule {
 
   @Override
   public String getName() {
-    return "Advert";
+    return "RNAdvert";
   }
 
   @ReactMethod

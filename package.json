@@ -1,7 +1,7 @@
 
 {
   "name": "react-native-advert",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A ReactNative Advert Component for android",
   "main": "index.js",
   "scripts": {
@@ -28,6 +28,6 @@
     "react-native": "^0.61.1"
   },
   "peerDependencies": {
-    "react-native": "^0.61.1"
+    "react-native": ">=0.47"
   }
 }
