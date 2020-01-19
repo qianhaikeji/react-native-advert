@@ -1,6 +1,16 @@
 
 # react-native-advert
 
+暂时只支持安卓平台
+
+当前支持广告平台:
+- 优量汇版本: 4.40.910
+- 穿山甲版本: 2.5.2.6
+
+当前支持广告类型:
+- 开屏广告
+- 激励视频
+
 ## Getting started
 
 `$ npm install react-native-advert --save`

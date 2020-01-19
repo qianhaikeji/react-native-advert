@@ -1,0 +1,33 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+    </style>
+    <style name="Dialog_Full_Screen">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@style/PickerAnim</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+    <style name="PickerAnim">
+        <item name="android:windowEnterAnimation">@anim/picker_enter</item>
+        <item name="android:windowExitAnimation">@anim/picker_exit</item>
+    </style>
+
+        <style name="PrimaryButton" parent="Theme.AppCompat">
+        <item name="colorButtonNormal">#fff</item>
+        <item name="colorControlHighlight">#503399cc</item>
+<!--        <item name="actionButtonStyle" ></item>-->
+<!--        <item name="selectableItemBackground">@drawable/item_background_material</item>-->
+<!--        <item name="selectableItemBackgroundBorderless">@drawable/item_background_borderless_material</item>-->
+<!--        <item name="borderlessButtonStyle">@style/Widget.Material.Light.Button.Borderless</item>-->
+<!--        <item name="buttonBarButtonStyle">@style/Widget.Material.Light.Button.ButtonBar.AlertDialog</item>-->
+
+
+    </style>
+</resources>

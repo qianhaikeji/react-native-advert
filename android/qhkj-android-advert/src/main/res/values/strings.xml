@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">qhkj-android-advert</string>
+    <string name="gdtslogan">GDTslogan</string>
+    <string name="click_to_skip">点击跳过</string>
+    <string name="title_reward_video">广点通：激励视频</string>
 </resources>

@@ -1,2 +1,103 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.qhkj.android.advert" />
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.qhkj.android.advert" >
+
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+<uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+<application android:usesCleartextTraffic="true" >
+    <uses-library
+        android:name="org.apache.http.legacy"
+        android:required="false" />
+    <!-- 声明SDK所需要的组件 -->
+    <service
+        android:name="com.qq.e.comm.DownloadService"
+        android:exported="false" />
+    <!-- 请开发者注意字母的大小写，ADActivity，而不是AdActivity -->
+    <activity
+        android:name="com.qq.e.ads.ADActivity"
+        android:configChanges="keyboard|keyboardHidden|orientation|screenSize" />
+    <activity
+        android:name="com.qq.e.ads.PortraitADActivity"
+        android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name="com.qq.e.ads.LandscapeADActivity"
+        android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+        android:screenOrientation="landscape" />
+
+
+
+    <activity
+        android:name="com.qhkj.android.advert.gdt.GDTSplashActivity"
+        android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+        android:screenOrientation="portrait"
+        android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+        android:windowSoftInputMode="stateHidden"
+        >
+    </activity>
+
+    <activity
+        android:name="com.qhkj.android.advert.gdt.GDTRewardVideoActivity"
+        android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+        android:label="@string/title_reward_video"
+        android:screenOrientation="portrait"
+        android:windowSoftInputMode="stateHidden|stateAlwaysHidden">
+        <!-- <meta-data
+            android:name="id"
+            android:value="@string/rewardVideo" /> -->
+        <meta-data
+            android:name="content"
+            android:value="激励视频广告接入示例" />
+        <meta-data
+            android:name="action"
+            android:value="gdt.action.REWARD_VIDEO_DEMO" />
+
+    </activity>
+
+    <activity
+        android:name="com.qhkj.android.advert.tt.TTSplashActivity"
+        android:configChanges="keyboard|orientation|screenSize"
+        android:screenOrientation="portrait"
+        android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+        >
+    </activity>
+
+    <activity
+        android:name="com.qhkj.android.advert.tt.TTRewardVideoActivity"
+        android:configChanges="keyboard|orientation|screenSize"
+        android:screenOrientation="portrait"
+        >
+    </activity>
+
+    <provider
+        android:name="com.qhkj.android.advert.common.FileProvider"
+        android:authorities="${applicationId}.fileprovider"
+        android:exported="false"
+        android:grantUriPermissions="true"
+        >
+        <meta-data
+            android:name="android.support.FILE_PROVIDER_PATHS"
+            android:resource="@xml/gdt_file_path" />
+    </provider>
+
+
+    <provider tools:replace="android:authorities"
+        android:name="com.bytedance.sdk.openadsdk.TTFileProvider"
+        android:authorities="${applicationId}.TTFileProvider"
+        android:exported="false"
+        android:grantUriPermissions="true">
+        <meta-data  tools:replace="android:resource"
+            android:name="android.support.FILE_PROVIDER_PATHS"
+            android:resource="@xml/file_paths" />
+    </provider>
+
+    <provider
+        android:name="com.bytedance.sdk.openadsdk.multipro.TTMultiProvider"
+        android:authorities="${applicationId}.TTMultiProvider"
+        android:exported="false" />
+</application>
+
+</manifest>

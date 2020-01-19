@@ -2,17 +2,32 @@
 {
   "name": "react-native-advert",
   "version": "1.0.0",
-  "description": "",
+  "description": "A ReactNative Advert Component for android",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "react-native"
+    "react-native",
+    "android",
+    "advert",
+    "gdt",
+    "tt"
   ],
-  "author": "",
-  "license": "",
+  "author": {
+    "name": "qhkj",
+    "email": "service@qianhaikeji.cn"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:qianhaikeji/react-native-advert.git"
+  },
+  "devDependencies": {
+    "react": "16.9.0",
+    "react-native": "^0.61.1"
+  },
   "peerDependencies": {
-    "react-native": "^0.41.2"
+    "react-native": "^0.61.1"
   }
 }
