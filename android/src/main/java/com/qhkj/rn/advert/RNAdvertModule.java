@@ -70,14 +70,20 @@ public class RNAdvertModule extends ReactContextBaseJavaModule {
     mAdvertPromise = promise;
 
     double random = Math.random();
-    if (random <= 0.5) {
+
+    double gdtProp = mConfig.getDouble("gdtProp");
+    double ttProp = mConfig.getDouble("ttProp");
+
+    if (random < gdtProp) {
       intent = new Intent(context, GDTSplashActivity.class);
       intent.putExtra("app_id", mConfig.getString("gdtAppId"));
       intent.putExtra("pos_id", mConfig.getString("gdtSplashPosId"));
-    } else {
+    } else if (random > gdtProp && random < gdtProp + ttProp) {
       intent = new Intent(context, TTSplashActivity.class); // mContext got from your overriden constructor
       intent.putExtra("is_express", mConfig.getBoolean("ttSplashIsExpress"));
       intent.putExtra("pos_id", mConfig.getString("ttSplashPosId"));
+    } else {
+      return;
     }
 
     try {
@@ -97,14 +103,20 @@ public class RNAdvertModule extends ReactContextBaseJavaModule {
     mAdvertPromise = promise;
 
     double random = Math.random();
-    if (random <= 0.5) {
+
+    double gdtProp = mConfig.getDouble("gdtProp");
+    double ttProp = mConfig.getDouble("ttProp");
+
+    if (random < gdtProp) {
       intent = new Intent(context, GDTRewardVideoActivity.class);
       intent.putExtra("app_id", mConfig.getString("gdtAppId"));
       intent.putExtra("pos_id", mConfig.getString("gdtRewardVideoPosId"));
-    } else {
+    } else if (random >= gdtProp && random < gdtProp + ttProp) {
       intent = new Intent(context, TTRewardVideoActivity.class); // mContext got from your overriden constructor
       intent.putExtra("horizontal_rit", mConfig.getString("ttRewardVideoHPosId"));
       intent.putExtra("vertical_rit", mConfig.getString("ttRewardVideoVPosId"));
+    } else {
+      return;
     }
 
     try {
